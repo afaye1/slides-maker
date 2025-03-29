@@ -1,0 +1,106 @@
+{
+    "pre_quiz": [
+      {
+        "question_text": "What is the definition of strategy in a business context?",
+        "options": {
+          "a": "Short-term tactics to increase profits",
+          "b": "The determination of long-term goals and courses of action",
+          "c": "Day-to-day operational decisions",
+          "d": "Product development processes"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question_text": "Which of the following describes a \"business model\"?",
+        "options": {
+          "a": "Financial projections for the next quarter",
+          "b": "Overall approach to competing in an industry",
+          "c": "HR policies and procedures",
+          "d": "Leadership hierarchy within a company"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question_text": "In strategic management, what are the components of a strategic hierarchy?",
+        "options": {
+          "a": "CEO, Managers, Employees",
+          "b": "Global Strategy, Business Unit Strategies, Functional Strategies",
+          "c": "Planning, Organizing, Leading, Controlling",
+          "d": "Marketing, Sales, Production, Distribution"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question_text": "Which market structure has many sellers offering homogeneous products with easy market entry?",
+        "options": {
+          "a": "Monopoly",
+          "b": "Oligopoly",
+          "c": "Pure Competition",
+          "d": "Monopolistic Competition"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question_text": "What distinguishes monopolistic competition from pure competition?",
+        "options": {
+          "a": "Number of sellers",
+          "b": "Market entry difficulty",
+          "c": "Product differentiation",
+          "d": "Government regulation"
+        },
+        "correct_answer": "c"
+      }
+    ],
+    "post_quiz": [
+      {
+        "question_text": "A value proposition refers to:",
+        "options": {
+          "a": "The price of a company's products",
+          "b": "Why customers choose your firm over alternatives",
+          "c": "How employees are compensated",
+          "d": "The company's mission statement"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question_text": "Strategic contexts that must be considered when developing strategy include:",
+        "options": {
+          "a": "Economic, societal, internal, and external factors",
+          "b": "Only competitive factors",
+          "c": "Only technological factors",
+          "d": "Only financial factors"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "question_text": "In Yum! Brands' strategic hierarchy, KFC, Taco Bell, and Pizza Hut represent:",
+        "options": {
+          "a": "Corporate Strategy",
+          "b": "Business Unit Strategies",
+          "c": "Functional Strategies",
+          "d": "Operational Strategies"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question_text": "Which market structure is characterized by few sellers, difficult market entry, and products that may be identical or differentiated?",
+        "options": {
+          "a": "Pure Competition",
+          "b": "Monopolistic Competition",
+          "c": "Oligopoly",
+          "d": "Monopoly"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question_text": "The strategic portfolio is best defined as:",
+        "options": {
+          "a": "A company's financial investments",
+          "b": "The market presence created by business activities",
+          "c": "The collection of products a company offers",
+          "d": "The organizational chart"
+        },
+        "correct_answer": "b"
+      }
+    ]
+  }
