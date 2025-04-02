@@ -1,0 +1,70 @@
+Create a professional PowerPoint-ready markdown file for an MBA course lecture on [COURSE_CODE]: [COURSE_TITLE], Unit [UNIT_NUMBER]: [UNIT_TITLE]. 
+
+Follow these formatting rules:
+
+1. Use a single # for the title slide with course name and unit
+2. Include --- between each slide
+3. Use ## for all slide titles
+4. Use simple bullet points with single dash (-)
+5. Use double-dash for sub-bullets (  -)
+6. Avoid complex formatting, tables, or nested lists
+7. Keep content concise (3-6 bullet points per slide)
+8. Include the following slide types:
+   - Title slide
+   - Agenda
+   - Core concept definitions
+   - Key frameworks
+   - Examples
+   - Discussion exercise
+   - Key takeaways
+   - Preview of next session
+
+Also generate a corresponding quiz_[UNIT_NUMBER].json file with the following structure:
+{
+  "pre_quiz": [
+    {
+      "question_text": "[QUESTION]",
+      "options": {
+        "a": "[OPTION A]",
+        "b": "[OPTION B]",
+        "c": "[OPTION C]",
+        "d": "[OPTION D]"
+      },
+      "correct_answer": "[LETTER]"
+    },
+    // Include 5 pre-quiz questions total
+  ],
+  "post_quiz": [
+    {
+      "question_text": "[QUESTION]",
+      "options": {
+        "a": "[OPTION A]",
+        "b": "[OPTION B]",
+        "c": "[OPTION C]",
+        "d": "[OPTION D]"
+      },
+      "correct_answer": "[LETTER]"
+    },
+    // Include 5 post-quiz questions total
+  ]
+}
+
+Structure the content for a 90-minute session with approximately 12-15 slides total.
+
+[INSTRUCTIONS]
+Analyze the provided course materials (study guide and lesson documents) and extract the key topics, concepts, frameworks, and learning objectives for Unit [UNIT_NUMBER]. 
+
+Organize these materials into a logical flow suitable for a lecture presentation.
+
+Ensure all vocabulary terms from the unit are properly defined and explained.
+
+Include real-world examples that illustrate the concepts, preferably from well-known companies or cases.
+
+Create discussion questions that encourage critical thinking and application of the material.
+
+For the quizzes, create challenging but fair multiple-choice questions that test both recall and application of the unit's key concepts. Pre-quiz questions should focus on basic understanding, while post-quiz questions should test deeper application.
+
+The slides and quiz should comprehensively cover the learning objectives identified in the study guide for this unit.
+[/INSTRUCTIONS]
+
+Include real-world examples, and make content relevant for MBA students.

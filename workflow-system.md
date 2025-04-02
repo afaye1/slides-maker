@@ -1,124 +1,139 @@
-# MBA Study Group Workflow System
+# Automated MBA Study Group Workflow - Setup Guide
 
-## Overview
-This document outlines the systematic workflow for preparing and conducting MBA study group sessions for the Strategic Management course.
+This guide explains how to set up and use the automated workflow system for generating study materials for any MBA course.
 
-## File Structure and Organization
+## System Overview
 
-### Markdown Content Files (Teaching Materials)
-- Unit1-markdown.md
-- Unit2-markdown.md
-- Unit3-markdown.md
-- Unit4-markdown.md
-- Unit5-markdown.md
+The automated system consists of:
 
-### Quiz Files (Assessment Materials)
-- Unit1-quiz.json
-- Unit2-quiz.json
-- Unit3-quiz.json
-- Unit4-quiz.json
-- Unit5-quiz.json
+1. **Content Generation** - Creates markdown slide content and quizzes
+2. **Slide Conversion** - Converts the content into PowerPoint presentations
+3. **Workflow Management** - Organizes all materials for a structured study approach
 
-### Python Scripts
-- create_slides.py - Converts markdown to PowerPoint slides
-- quiz_to_slides.py - Converts quiz JSON to slides for interactive sessions
+## Files in the System
 
-## Weekly Preparation Workflow
+- `modular_prompt.txt` - Template for AI content generation
+- `auto_generate_content.py` - Main script that orchestrates the process
+- `create_slides.py` - Converts markdown to PowerPoint slides
+- `quiz_to_slides.py` - Converts JSON quizzes to PowerPoint
+- `README.md` - Overall project documentation
 
-### 1. Content Preparation (3-4 days before Saturday session)
-- Review unit materials from course documents
-- Update or create markdown content files with key concepts
-- Structure content in slide-ready format with clear section breaks
-- Add practical examples and discussion prompts
-- Generate quiz questions for pre/post assessment
+## Setup Instructions
 
-### 2. Slide Generation (2 days before Saturday session)
+### 1. Install Required Packages
+
 ```bash
-# Generate main content slides
-python create_slides.py UnitX-markdown.md UnitX-slides.pptx
-
-# Generate quiz slides
-python quiz_to_slides.py UnitX-quiz.json UnitX-quiz-slides.pptx
+pip install python-pptx==0.6.21 markdown==3.4.3
 ```
 
-### 3. Session Planning (1 day before Saturday session)
-- Review generated slides
-- Prepare facilitator notes for each section
-- Plan timing for each segment (content, discussion, quiz)
-- Prepare any additional materials (case studies, exercises)
-- Upload materials to Discord for early access
-
-## Session Structure (90 minutes - Saturday)
-
-### 1. Welcome and Pre-Quiz (15 minutes)
-- Welcome and agenda overview (2 min)
-- Pre-quiz to assess baseline knowledge (10 min)
-- Brief discussion of pre-quiz results (3 min)
-
-### 2. Content Presentation (40 minutes)
-- Present main concepts from slides (30 min)
-- Incorporate real-world examples (5 min)
-- Clarify questions (5 min)
-
-### 3. Break (5 minutes)
-
-### 4. Interactive Application (25 minutes)
-- Group discussion or case study analysis
-- Practical application of concepts
-- Small group breakouts if attendance is high
-
-### 5. Post-Quiz and Wrap-up (15 minutes)
-- Post-quiz to measure learning (10 min)
-- Preview next session (3 min)
-- Administrative announcements (2 min)
-
-## Mid-week Check-in Structure (60 minutes - Wednesday)
-
-### 1. Quick Review (15 minutes)
-- Recap key concepts from Saturday
-- Address any follow-up questions
-
-### 2. Discussion of Application (30 minutes)
-- Discuss how concepts apply in practical settings
-- Share insights from additional readings/materials
-- Work through challenging aspects
-
-### 3. Preview and Preparation (15 minutes)
-- Preview upcoming Saturday session
-- Assign any preparation tasks
-- Open forum for questions
-
-## Post-Session Tasks
-
-### 1. Documentation (Within 24 hours after session)
-- Upload session recording to YouTube
-- Post summary notes to Discord
-- Share any additional resources mentioned
-
-### 2. Assessment and Iteration (Within 48 hours)
-- Review quiz results to identify knowledge gaps
-- Note areas that generated most questions/confusion
-- Adjust upcoming session plans based on feedback
-
-## Technical Requirements
-
-### Software Dependencies
-```
-python-pptx==0.6.21
-markdown==3.4.3
+If you want to use the OpenAI integration:
+```bash
+pip install openai
 ```
 
-### Platform Access
-- Ensure Discord server access for all participants
-- Maintain YouTube channel for recordings
-- Have Google Meet links ready for live sessions
+### 2. Prepare Your Course Materials
 
-## Continuous Improvement
+1. Place your course study guide in a folder (this is required)
+2. Place any lesson documents in a folder (optional but recommended)
 
-After each full unit cycle:
-1. Collect feedback from participants
-2. Assess engagement and learning outcomes
-3. Refine content and delivery methods
-4. Update workflow process as needed
+### 3. Run the Automated Process
 
-This systematic approach ensures consistent, high-quality study sessions while maximizing learning effectiveness within the time constraints.
+The system can run in two modes:
+
+#### Without API Key (Manual AI Interaction)
+
+```bash
+python auto_generate_content.py --study-guide path/to/study_guide.md --lessons-dir path/to/lessons --output-dir output --unit 2
+```
+
+This will:
+1. Extract Unit 2 information from the study guide
+2. Create a prompt file in the output directory
+3. You'll need to manually use this prompt with an AI tool
+4. Save the AI outputs as directed in the terminal output
+
+#### With API Key (Fully Automated)
+
+```bash
+python auto_generate_content.py --study-guide path/to/study_guide.md --lessons-dir path/to/lessons --output-dir output --unit_number --api-key your_openai_api_key
+```
+
+This will:
+1. Extract unit_number information from the study guide
+2. Use the OpenAI API to generate content
+3. Save markdown and quiz files
+4. Automatically convert them to PowerPoint presentations
+
+### 4. Process All Units at Once
+
+To generate materials for all units in the course:
+
+```bash
+python auto_generate_content.py --study-guide path/to/study_guide.md --lessons-dir path/to/lessons --output-dir output --all --api-key your_openai_api_key
+```
+
+## Folder Structure
+
+After running the process, your output directory will contain:
+
+```
+output/
+├── unit1-markdown.md       # Slide content in markdown
+├── unit1-quiz.json         # Quiz questions in JSON
+├── unit1-slides.pptx       # Main presentation
+├── unit1-quiz.pptx         # Quiz presentation
+├── unit2-markdown.md
+├── unit2-quiz.json
+...etc
+```
+
+## Customization Options
+
+### Modifying the Prompt Template
+
+Edit `modular_prompt.txt` to change how content is generated:
+
+- Adjust formatting instructions
+- Change slide types
+- Modify quiz structure
+- Add specific requirements for your course
+
+### Customizing Slide Design
+
+The slide generation system uses basic PowerPoint templates. For more advanced designs:
+
+1. Create a custom PowerPoint template (.pptx)
+2. Use it with the slide generator:
+   ```bash
+   python create_slides_updated.py input_dir output_dir your_template.pptx
+   ```
+
+## Troubleshooting
+
+### Common Issues:
+
+1. **No units found in study guide**
+   - Ensure your study guide uses headers like "Unit X: Title" or "Section X: Title"
+
+2. **Content generation fails**
+   - Check your API key
+   - Look for specific error messages
+   - Try the manual approach by using the generated prompt
+
+3. **Slide conversion fails**
+   - Check that python-pptx is properly installed
+   - Verify the markdown follows the expected format
+
+## Workflow Integration
+
+This automated system works best when integrated with a study group workflow:
+
+1. Run the generation process 3-4 days before your session
+2. Review and refine the generated materials
+3. Upload presentations to your online platforms
+4. Use the main slides for Saturday sessions
+5. Use quiz slides for pre/post assessment
+
+## Support
+
+If you encounter issues or need help customizing this workflow, check the documentation or reach out via the Discord community.
